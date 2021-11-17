@@ -1,0 +1,38 @@
+﻿@using System.Collections.Generic
+@model ICollection<CakeItWebApp.ViewModels.Forum.CommentInputViewModel>
+
+@{
+    var count = 0;
+    var date = "";
+}
+<main class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 mt-2">
+            <h1>All My Comments</h1>
+            <hr class="hr-2" style="background-color: forestgreen">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="row">
+                        <th scope="col" class="col-md-1 d-flex"><h3>#</h3></th>
+                        <th scope="col" class="col-md-3 d-flex"><h3>Posted On</h3></th>
+                        <th scope="col" class="col-md-5 d-flex"><h3>Content</h3></th>
+                        <th scope="col" class="col-md-3 d-flex"><h3>Post</h3></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        date = (item.CreatedOn).ToString("dd-MM-yyyy HH:mm");
+                        <tr class="row">
+                            <th scope="row" class="col-md-1 d-flex"><h5>@count</h5></th>
+                            <td class="col-md-3 d-flex"><h5>@date</h5></td>
+                            <td class="col-md-5 d-flex"><h5>@Html.Raw(item.Content) ...</h5></td>
+                            <td class="col-md-3 d-flex"><h5><a asp-controller="Forum" asp-action="CommentsPerPost" asp-route-postId="@item.PostId" class="btn btn-info text-white">Post</a></h5></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>

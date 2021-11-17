@@ -1,0 +1,33 @@
+﻿@model CakeItWebApp.ViewModels.CakeIndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<main class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <h1 class="my-4">CakeIt</h1>
+            <div class="list-group">
+                <a asp-controller="Cakes" asp-action="Index" class="list-group-item">Cakes</a>
+                <a asp-controller="CustomCakes" asp-action="Index" class="list-group-item">Custom Cakes</a>
+                <a asp-controller="Books" asp-action="Index" class="list-group-item">Books</a>
+                <a asp-controller="Tutorials" asp-action="Index" class="list-group-item">Tutorials</a>
+            </div>
+        </div>
+        <!-- /.col-lg-3 -->
+        @if (Model != null)
+        {
+            <div class="col-lg-9">
+                <div class="card mt-4 mb-4">
+                    <img class="card-img-top img-fluid" src="@Model.Image" alt="">
+                    <div class="card-body">
+                        <h3 class="card-title">@Model.Name</h3>
+                        <h4>$@Model.Price</h4>
+                        <p class="card-text">@Model.Description</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-9 -->
+        }
+    </div>
+</main>

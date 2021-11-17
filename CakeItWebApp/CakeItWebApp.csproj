@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-CakeItWebApp-04103C43-A568-4779-AEFF-59DBFF242BE1</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+ <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="CloudinaryDotNet" Version="1.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" PrivateAssets="All" />
+    <PackageReference Include="TinyMCE" Version="4.9.2" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="7.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CakeItWebApp.Data\CakeItWebApp.Data.csproj" />
+    <ProjectReference Include="..\CakeItWebApp.Models\CakeItWebApp.Models.csproj" />
+    <ProjectReference Include="..\CakeItWebApp.ViewModels\CakeItWebApp.ViewModels.csproj" />
+    <ProjectReference Include="..\CakeWebApp.Services.Common\CakeWebApp.Services.Common.csproj" />
+    <ProjectReference Include="..\Services\CakeItWebApp.Services.Messaging\CakeItWebApp.Services.Messaging.csproj" />
+  </ItemGroup>
+
+</Project>
